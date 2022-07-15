@@ -1,0 +1,93 @@
+Products API endpoints test      
+============TESTS START============
+
+    GET request
+=============GET TEST============= 
+
+      GetAll status 200
+        ✔ this should return a status code 200 (120ms)
+
+**********************************
+
+      GetAll data
+        ✔ returns an array of objects
+
+**********************************   
+
+      GetById status 204
+        ✔ this should return a status code 204
+
+**********************************
+
+      GetById status 200
+        ✔ this should return a status code 200
+
+**********************************
+
+      GetById data
+        ✔ returns an object
+
+**********************************
+
+=============TEST ENDS============
+    POST request
+=============POST TEST=============
+
+      Post product status 201
+        ✔ this would return a status code 201 (44ms)
+
+**********************************
+
+      Post product status 400
+        ✔ this would return a status code 400
+
+**********************************
+
+      Post product data
+        ✔ this would add a product into db
+
+**********************************
+
+=============TEST ENDS============
+    PUT request
+=============PUT TEST=============
+
+      Put product status 201
+        ✔ this would return a status code 201
+
+**********************************
+
+      Put product status 400
+        ✔ this would return a status code 400
+
+**********************************
+
+      Put product data
+        ✔ this would update a product into db
+
+**********************************
+
+=============TEST ENDS============
+    DELETE request
+=============DELETE TEST=============
+
+      Delete product status 204
+        ✔ this would return a status code 204
+
+**********************************
+
+      Delete product status 400
+        ✔ this would return a status code 400
+
+**********************************
+
+      Delete product data
+        ✔ this would add a product into db
+
+**********************************
+
+=============TEST ENDS============
+===========ALL TEST ENDS============
+
+
+  14 passing (441ms)
