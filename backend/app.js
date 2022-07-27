@@ -1,6 +1,11 @@
 import express from "express";
 import apiRoutes from "./routes/api.routes.js";
 import "./config/dotenv.config.js";
+import { graphqlHTTP } from "express-graphql";
+import schema from './graphql/schema/api.schema.js'
+import Connection from "./config/connection.config.js";
+
+const db = Connection.getInstance();
 
 export class App {
   constructor(port) {
@@ -19,6 +24,10 @@ export class App {
   }
   routes() {
     this.app.use("/api", apiRoutes);
+    this.app.use("/graphql", graphqlHTTP({
+      graphiql: true,
+      schema: schema
+    }))
   }
   listen() {
     this.app.listen(this.app.get("port"), () => {
@@ -28,4 +37,6 @@ export class App {
 }
 
 const server = new App();
+const connected = async () => await db.connect();
+connected()
 server.listen();
