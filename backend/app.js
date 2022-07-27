@@ -2,7 +2,7 @@ import express from "express";
 import apiRoutes from "./routes/api.routes.js";
 import "./config/dotenv.config.js";
 import { graphqlHTTP } from "express-graphql";
-import schema from './graphql/schema/api.schema.js'
+import schema from "./graphql/schema/api.schema.js";
 import Connection from "./config/connection.config.js";
 
 const db = Connection.getInstance();
@@ -38,5 +38,5 @@ export class App {
 
 const server = new App();
 const connected = async () => await db.connect();
-connected()
+connected();
 server.listen();
